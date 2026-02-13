@@ -10,24 +10,25 @@
         .card { background: #FFB6C1; padding: 30px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; min-height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         
         .bear-img { width: 140px; margin-bottom: 20px; border-radius: 15px; }
-        .pink-text { color: #800020; font-family: 'Georgia', serif; margin-bottom: 10px; }
+        .pink-text { color: #800020; font-family: 'Georgia', serif; margin-bottom: 10px; font-weight: bold; }
         
         /* Buttons */
         .btn-container { display: flex; gap: 15px; margin-top: 20px; justify-content: center; width: 100%; position: relative; height: 50px; }
-        button { background: #FF4D4D; color: white; border: none; padding: 12px 25px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; z-index: 10; }
-        #no-btn { background: #4D79FF; position: absolute; }
+        button { background: #FF4D4D; color: white; border: none; padding: 12px 25px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; z-index: 10; font-size: 14px; text-transform: uppercase; }
+        #no-btn { background: #4D79FF; position: absolute; transition: 0.1s ease; }
         
         /* Quiz Styling */
-        .quiz-option { width: 100%; background: white; color: black; margin-bottom: 10px; border-radius: 10px; border: none; padding: 12px; font-size: 14px; }
+        .quiz-option { width: 100%; background: white; color: black; margin-bottom: 10px; border-radius: 10px; border: none; padding: 12px; font-size: 14px; text-transform: none; }
         .correct-msg { color: #800020; font-size: 12px; margin-top: 10px; font-weight: bold; }
 
-        /* Gallery */
+        /* Gallery with Captions */
         .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px; width: 100%; }
         .photo-frame { background: white; padding: 8px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-        .photo-frame img { width: 100%; border-radius: 5px; height: 120px; object-fit: cover; display: block; }
+        .photo-frame img { width: 100%; border-radius: 5px; height: 130px; object-fit: cover; display: block; }
+        .caption { font-size: 11px; margin-top: 8px; color: #555; font-style: italic; font-weight: bold; }
         
         /* Letter & Video */
-        .letter-box { background: #fdfae6; padding: 20px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); font-size: 13px; text-align: left; line-height: 1.6; border-left: 5px solid #d4af37; }
+        .letter-box { background: #fdfae6; padding: 20px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); font-size: 13px; text-align: left; line-height: 1.6; border-left: 5px solid #d4af37; color: #333; }
         video { width: 100%; border-radius: 15px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
         .hidden { display: none !important; }
@@ -39,9 +40,10 @@
         <div class="card">
             <img src="https://media.tenor.com/v8S7yD-Bf7oAAAAi/milk-and-mocha-bear-couple.gif" class="bear-img">
             <h1 class="pink-text">Will you be mine 🥺?</h1>
+            <p style="font-size: 12px; color: #555; margin-bottom: 15px;">Life is an incredible journey, and I want to spend every single second of it with you.</p>
             <div class="btn-container">
                 <button onclick="showStep('step2')">YES</button>
-                <button id="no-btn" onmouseover="moveNo()">NO</button>
+                <button id="no-btn" onmouseover="moveNo()" onclick="moveNo()">NO</button>
             </div>
         </div>
     </div>
@@ -49,33 +51,30 @@
     <div id="step2" class="container hidden">
         <div class="card">
             <h2 class="pink-text">Quiz for you 😚</h2>
-            <p>What fights a lot in this relationship 🤨?</p>
+            <p style="font-size: 14px; margin-bottom: 20px;">What fights a lot in this relationship 🤨?</p>
             <button class="quiz-option" onclick="alert('Try again! 😜')">Always You</button>
             <button class="quiz-option" onclick="alert('Liar! 😂')">No One</button>
             <button style="width:100%;" onclick="showStep('step3')">Me</button>
-            <p class="correct-msg">Correct! You're so smart! ❤️</p>
         </div>
     </div>
 
     <div id="step3" class="container hidden">
         <div class="card">
             <h2 class="pink-text">Quiz for you 😚</h2>
-            <p>Where do I plan to spend the rest of my life 🤤?</p>
+            <p style="font-size: 14px; margin-bottom: 20px;">Where do I plan to spend the rest of my life 🤤?</p>
             <button class="quiz-option" onclick="alert('Too far! ✈️')">Paris</button>
             <button class="quiz-option" onclick="alert('No oxygen there! 🚀')">On Mars</button>
             <button style="width:100%;" onclick="showStep('step4')">In Your Heart</button>
-            <p class="correct-msg">Correct! You're so smart! ❤️</p>
         </div>
     </div>
 
     <div id="step4" class="container hidden">
         <div class="card">
             <h2 class="pink-text">Quiz for you 😚</h2>
-            <p>Who is the absolute 'Boss' in this relationship 🤨?</p>
+            <p style="font-size: 14px; margin-bottom: 20px;">Who is the absolute 'Boss' in this relationship 🤨?</p>
             <button class="quiz-option" onclick="alert('I wish! 😂')">Me</button>
             <button class="quiz-option" onclick="alert('She is a boss, but not THE boss! ❤️')">My Mam</button>
             <button style="width:100%;" onclick="showStep('step5')">Obviously You</button>
-            <p class="correct-msg">Correct! You're so smart! ❤️</p>
         </div>
     </div>
 
@@ -88,7 +87,7 @@
                 <p>Be the same as you are and no sorry for irritating you. No one can replace you from my heart, ur always be my no.1.</p>
                 <p><strong>Forever yours. ❤️</strong></p>
             </div>
-            <button style="margin-top:20px;" onclick="showStep('step6')">SEE OUR MEMORIES →</button>
+            <button style="margin-top:20px;" onclick="showStep('step6')">OUR MEMORIES →</button>
         </div>
     </div>
 
@@ -96,12 +95,12 @@
         <div class="card">
             <h2 class="pink-text">Look at this cutie 😭</h2>
             <div class="gallery">
-                <div class="photo-frame"><img src="photo1.jpg"></div>
-                <div class="photo-frame"><img src="photo2.jpg"></div>
-                <div class="photo-frame"><img src="photo3.jpg"></div>
-                <div class="photo-frame"><img src="photo4.jpg"></div>
-                <div class="photo-frame"><img src="photo5.jpg"></div>
-                <div class="photo-frame"><img src="photo6.jpg"></div>
+                <div class="photo-frame"><img src="photo1.jpg"><div class="caption">Sweet Hello</div></div>
+                <div class="photo-frame"><img src="photo2.jpg"><div class="caption">True Smile</div></div>
+                <div class="photo-frame"><img src="photo3.jpg"><div class="caption">Perfect Day</div></div>
+                <div class="photo-frame"><img src="photo4.jpg"><div class="caption">Only Us</div></div>
+                <div class="photo-frame"><img src="photo5.jpg"><div class="caption">My Home</div></div>
+                <div class="photo-frame"><img src="photo6.jpg"><div class="caption">Forever Us</div></div>
             </div>
             <button style="margin-top:20px;" onclick="showStep('step7')">FINAL SURPRISE →</button>
         </div>
@@ -113,8 +112,8 @@
             <video controls>
                 <source src="final_video.mp4" type="video/mp4">
             </video>
-            <p>You are my favorite person in the whole world.</p>
-            <button onclick="location.reload()">REPLAY</button>
+            <p style="font-size: 14px; margin-top: 10px;">You are my favorite person in the whole world.</p>
+            <button onclick="location.reload()" style="margin-top: 15px; background: #4D79FF;">REPLAY ❤️</button>
         </div>
     </div>
 
@@ -122,6 +121,7 @@
         function showStep(stepId) {
             document.querySelectorAll('.container').forEach(c => c.classList.add('hidden'));
             document.getElementById(stepId).classList.remove('hidden');
+            window.scrollTo(0,0);
         }
 
         function moveNo() {
@@ -135,4 +135,3 @@
     </script>
 </body>
 </html>
-

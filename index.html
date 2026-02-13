@@ -5,150 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>For My Ponn ❤️🧿</title>
     <style>
-        body {
-            background-color: #FDF5E6;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            margin: 0;
-            font-family: 'Serif', Georgia, serif;
-            overflow-x: hidden;
-            text-align: center;
-        }
-        .container { padding: 20px; max-width: 400px; }
-        .card {
-            background: #FFB6C1;
-            padding: 30px;
-            border-radius: 25px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-            margin-bottom: 20px;
-        }
-        .gallery {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .photo-frame {
-            background: white;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
-        .photo-frame img {
-            width: 100%;
-            border-radius: 5px;
-            display: block;
-        }
-        .caption {
-            font-size: 12px;
-            margin-top: 8px;
-            color: #555;
-            font-style: italic;
-        }
-        video {
-            width: 100%;
-            border-radius: 15px;
-            margin-top: 20px;
-            display: none;
-        }
-        button {
-            background: #FF4D4D;
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 50px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 20px;
-        }
-        #heart-scanner {
-            width: 100px;
-            height: 100px;
-            background: #ff4d4d;
-            border-radius: 50%;
-            margin: 20px auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 40px;
-            animation: pulse 1.5s infinite;
-            cursor: pointer;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-            100% { transform: scale(1); }
-        }
-        .hidden { display: none; }
+        body { background-color: #FDF5E6; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; font-family: 'Serif', Georgia, serif; text-align: center; }
+        .container { width: 90%; max-width: 400px; padding: 20px; }
+        .card { background: #FFB6C1; padding: 30px; border-radius: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); position: relative; min-height: 400px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+        
+        .bear-img { width: 140px; margin-bottom: 20px; border-radius: 15px; }
+        .pink-text { color: #800020; font-family: 'Georgia', serif; margin-bottom: 10px; }
+        
+        /* Buttons */
+        .btn-container { display: flex; gap: 15px; margin-top: 20px; justify-content: center; width: 100%; position: relative; height: 50px; }
+        button { background: #FF4D4D; color: white; border: none; padding: 12px 25px; border-radius: 50px; font-weight: bold; cursor: pointer; transition: 0.3s; z-index: 10; }
+        #no-btn { background: #4D79FF; position: absolute; }
+        
+        /* Quiz Styling */
+        .quiz-option { width: 100%; background: white; color: black; margin-bottom: 10px; border-radius: 10px; border: none; padding: 12px; font-size: 14px; }
+        .correct-msg { color: #800020; font-size: 12px; margin-top: 10px; font-weight: bold; }
+
+        /* Gallery */
+        .gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 20px; width: 100%; }
+        .photo-frame { background: white; padding: 8px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .photo-frame img { width: 100%; border-radius: 5px; height: 120px; object-fit: cover; display: block; }
+        
+        /* Letter & Video */
+        .letter-box { background: #fdfae6; padding: 20px; border-radius: 5px; box-shadow: 2px 2px 10px rgba(0,0,0,0.1); font-size: 13px; text-align: left; line-height: 1.6; border-left: 5px solid #d4af37; }
+        video { width: 100%; border-radius: 15px; margin-top: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+
+        .hidden { display: none !important; }
     </style>
 </head>
 <body>
 
-    <div id="intro" class="container">
+    <div id="step1" class="container">
         <div class="card">
-            <h1>Will you be mine? ❤️</h1>
-            <button onclick="nextStep('intro', 'gallery-section')">YES!</button>
-        </div>
-    </div>
-
-    <div id="gallery-section" class="container hidden">
-        <div class="card">
-            <h2>Look at this cutie 😭</h2>
-            <div class="gallery">
-                <div class="photo-frame"><img src="photo1.jpg"><div class="caption">Sweet Hello</div></div>
-                <div class="photo-frame"><img src="photo2.jpg"><div class="caption">True Smile</div></div>
-                <div class="photo-frame"><img src="photo3.jpg"><div class="caption">Perfect Day</div></div>
-                <div class="photo-frame"><img src="photo4.jpg"><div class="caption">Only Us</div></div>
-                <div class="photo-frame"><img src="photo5.jpg"><div class="caption">My Home</div></div>
-                <div class="photo-frame"><img src="photo6.jpg"><div class="caption">Forever Us</div></div>
+            <img src="https://media.tenor.com/v8S7yD-Bf7oAAAAi/milk-and-mocha-bear-couple.gif" class="bear-img">
+            <h1 class="pink-text">Will you be mine 🥺?</h1>
+            <div class="btn-container">
+                <button onclick="showStep('step2')">YES</button>
+                <button id="no-btn" onmouseover="moveNo()">NO</button>
             </div>
-            <button onclick="nextStep('gallery-section', 'scanner-section')">NEXT →</button>
         </div>
     </div>
 
-    <div id="scanner-section" class="container hidden">
+    <div id="step2" class="container hidden">
         <div class="card">
-            <h3>Hold your heart to scan...</h3>
-            <div id="heart-scanner" onmousedown="startScan()" onmouseup="stopScan()" ontouchstart="startScan()" ontouchend="stopScan()">❤️</div>
-            <p id="status">HOLD TO SCAN</p>
+            <h2 class="pink-text">Quiz for you 😚</h2>
+            <p>What fights a lot in this relationship 🤨?</p>
+            <button class="quiz-option" onclick="alert('Try again! 😜')">Always You</button>
+            <button class="quiz-option" onclick="alert('Liar! 😂')">No One</button>
+            <button style="width:100%;" onclick="showStep('step3')">Me</button>
+            <p class="correct-msg">Correct! You're so smart! ❤️</p>
         </div>
     </div>
 
-    <div id="final-surprise" class="container hidden">
+    <div id="step3" class="container hidden">
         <div class="card">
-            <h2>I Love You! ❤️🧿</h2>
-            <video id="surprise-video" controls>
+            <h2 class="pink-text">Quiz for you 😚</h2>
+            <p>Where do I plan to spend the rest of my life 🤤?</p>
+            <button class="quiz-option" onclick="alert('Too far! ✈️')">Paris</button>
+            <button class="quiz-option" onclick="alert('No oxygen there! 🚀')">On Mars</button>
+            <button style="width:100%;" onclick="showStep('step4')">In Your Heart</button>
+            <p class="correct-msg">Correct! You're so smart! ❤️</p>
+        </div>
+    </div>
+
+    <div id="step4" class="container hidden">
+        <div class="card">
+            <h2 class="pink-text">Quiz for you 😚</h2>
+            <p>Who is the absolute 'Boss' in this relationship 🤨?</p>
+            <button class="quiz-option" onclick="alert('I wish! 😂')">Me</button>
+            <button class="quiz-option" onclick="alert('She is a boss, but not THE boss! ❤️')">My Mam</button>
+            <button style="width:100%;" onclick="showStep('step5')">Obviously You</button>
+            <p class="correct-msg">Correct! You're so smart! ❤️</p>
+        </div>
+    </div>
+
+    <div id="step5" class="container hidden">
+        <div class="card">
+            <h2 class="pink-text">A Letter For You 🥺</h2>
+            <div class="letter-box">
+                <p><strong>My Baby,</strong></p>
+                <p>Thank you for being my person. I want to hold your hand through every season of life. You are my home. You are my everything, and I love you so so much.</p>
+                <p>Be the same as you are and no sorry for irritating you. No one can replace you from my heart, ur always be my no.1.</p>
+                <p><strong>Forever yours. ❤️</strong></p>
+            </div>
+            <button style="margin-top:20px;" onclick="showStep('step6')">SEE OUR MEMORIES →</button>
+        </div>
+    </div>
+
+    <div id="step6" class="container hidden">
+        <div class="card">
+            <h2 class="pink-text">Look at this cutie 😭</h2>
+            <div class="gallery">
+                <div class="photo-frame"><img src="photo1.jpg"></div>
+                <div class="photo-frame"><img src="photo2.jpg"></div>
+                <div class="photo-frame"><img src="photo3.jpg"></div>
+                <div class="photo-frame"><img src="photo4.jpg"></div>
+                <div class="photo-frame"><img src="photo5.jpg"></div>
+                <div class="photo-frame"><img src="photo6.jpg"></div>
+            </div>
+            <button style="margin-top:20px;" onclick="showStep('step7')">FINAL SURPRISE →</button>
+        </div>
+    </div>
+
+    <div id="step7" class="container hidden">
+        <div class="card">
+            <h2 class="pink-text">I Love You! ❤️🧿</h2>
+            <video controls>
                 <source src="final_video.mp4" type="video/mp4">
             </video>
             <p>You are my favorite person in the whole world.</p>
+            <button onclick="location.reload()">REPLAY</button>
         </div>
     </div>
 
     <script>
-        function nextStep(current, next) {
-            document.getElementById(current).classList.add('hidden');
-            document.getElementById(next).classList.remove('hidden');
+        function showStep(stepId) {
+            document.querySelectorAll('.container').forEach(c => c.classList.add('hidden'));
+            document.getElementById(stepId).classList.remove('hidden');
         }
 
-        let scanTimer;
-        function startScan() {
-            document.getElementById('status').innerText = "SCANNING...";
-            scanTimer = setTimeout(() => {
-                nextStep('scanner-section', 'final-surprise');
-                document.getElementById('surprise-video').style.display = 'block';
-            }, 3000);
-        }
-
-        function stopScan() {
-            clearTimeout(scanTimer);
-            if (document.getElementById('status')) {
-                document.getElementById('status').innerText = "HOLD TO SCAN";
-            }
+        function moveNo() {
+            const btn = document.getElementById('no-btn');
+            const card = document.querySelector('.card');
+            const maxX = card.clientWidth - btn.offsetWidth - 20;
+            const maxY = card.clientHeight - btn.offsetHeight - 20;
+            btn.style.left = Math.floor(Math.random() * maxX) + "px";
+            btn.style.top = Math.floor(Math.random() * maxY) + "px";
         }
     </script>
 </body>
 </html>
+
